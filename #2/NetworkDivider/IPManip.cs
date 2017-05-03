@@ -14,12 +14,26 @@ namespace NetworkDivider
 	{
 		public static int BinToDec(int number)
 		{
-			return Convert.ToInt32(number.ToString(), 2);
+			try {
+				if(number < 0 || number > 11111111)
+					throw new Exception();
+				return Convert.ToInt32(number.ToString(), 2);
+			}
+			catch {
+				throw new ArgumentException();
+			}
 		}
 		
 		public static int DecToBin(int number)
 		{
-			return -1;
+			try {
+				if(number < 0 || number > 255)
+					throw new Exception();
+				return int.Parse(Convert.ToString(number, 2));
+			}
+			catch {
+				throw new ArgumentException();
+			}
 		}
 	}
 }
