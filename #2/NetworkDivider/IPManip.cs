@@ -14,7 +14,7 @@ namespace NetworkDivider
 	{
 		public static int BinToDec(int number)
 		{
-			return -1;
+			return Convert.ToInt32(number.ToString(), 2);
 		}
 		
 		public static int DecToBin(int number)
